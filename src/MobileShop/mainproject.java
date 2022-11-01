@@ -11,12 +11,13 @@ public class mainproject {
 			try {
 				int choice;
 				System.out.println("1, Create new entry ");
-				System.out.println("2, Retreive");
+				System.out.println("2, Retreive Available");
 				System.out.println("3, Update");
 				System.out.println("4, For sell");
-				System.out.println("5, Exit program***");
+				System.out.println("5, Retreive sold");
+				System.out.println("6, Exit program***");
 				
-				System.out.print("Enter your choice? 1/2/3/4/5: ");
+				System.out.print("Enter your choice? 1/2/3/4/5/6: ");
 				choice=sc.nextInt();
 				
 				switch(choice) {
@@ -42,6 +43,10 @@ public class mainproject {
 					System.out.println(result);
 					break;
 				case 5:
+					result=cellphoneDAO.fatchallsold();
+					System.out.println(result);
+					break;
+				case 6:
 					System.out.println("Thanks for using my software******");
 					System.exit(0);
 					//break;

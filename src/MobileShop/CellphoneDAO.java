@@ -7,4 +7,5 @@ public interface CellphoneDAO {
          String update(Cellphone cellphone);
          Cellphone inputforsale();
          String delete(Cellphone cellphone);
+         String fatchallsold();
 }

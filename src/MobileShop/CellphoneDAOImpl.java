@@ -166,5 +166,31 @@ public class CellphoneDAOImpl implements CellphoneDAO{
 			result=e.toString();
 		}
 		return result;
+	}
+
+	@Override
+	public String fatchallsold() {
+		// TODO Auto-generated method stub
+		String result=" ";
+		try {
+			createConnection();
+			String query="select * from mobileshop "+
+			"where currentstatus='sold' " ;
+			
+			Statement stmt=con.createStatement();
+			ResultSet rs=stmt.executeQuery(query);
+			while(rs.next()==true) {
+				for(int i=1;i<=10;i++) {
+					result+=rs.getString(i)+"\t ";
+				}
+				result+="\n";
+			}
+			rs.close();
+			stmt.close();
+		}
+		catch (Exception e) {
+			result=e.toString();
+		}
+		return result;
+	}
 	}	
-}
